@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
+import { useGlobal } from '../../context/global-context';
 import './header.styles.css';
+
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [asideClass, setAsideClass] = useState('side-menu');
   const [menuBurguerClass, setMenuBurguerClass] = useState('hamburguer');
   const [isDesktop, setIsDesktop] = useState(false);
 
+  const {
+    state: { isLoading },
+  } = useGlobal();
+
+  console.log('Estado global desde el header: ', isLoading);
   /* Set the state of mobile icon menu */
   const handleMenuClick = () => {
     setIsClicked(!isClicked);
@@ -48,36 +55,36 @@ const Header = () => {
               <img src="/logo.png" alt="Logo for Yasser Web Development" />
             </a>
           </div>
-          <div className="nav-links">
+          <div className={`nav-links`}>
             <ul>
               <li
-                className="nav-link-item"
-                style={{ transitionDelay: 0 + 'ms' }}
+                className="nav-link-item fadeInDown"
+                style={{ animationDelay: 0 + 'ms' }}
               >
                 <a href=""></a>About
               </li>
               <li
-                className="nav-link-item"
-                style={{ transitionDelay: 100 + 'ms' }}
+                className="nav-link-item fadeInDown"
+                style={{ animationDelay: 100 + 'ms' }}
               >
                 <a href=""></a>Skills
               </li>
               <li
-                className="nav-link-item"
-                style={{ transitionDelay: 200 + 'ms' }}
+                className="nav-link-item fadeInDown"
+                style={{ animationDelay: 200 + 'ms' }}
               >
                 <a href=""></a>Projects
               </li>
               <li
-                className="nav-link-item"
-                style={{ transitionDelay: 300 + 'ms' }}
+                className="nav-link-item fadeInDown"
+                style={{ animationDelay: 300 + 'ms' }}
               >
                 <a href=""></a>Contact
               </li>
             </ul>
             <div
-              className="nav-link-item-button"
-              style={{ transitionDelay: 300 + 'ms' }}
+              className="nav-link-item-button fadeInDown  "
+              style={{ animationDelay: 400 + 'ms' }}
             >
               <a className="resume-button">Resume</a>
             </div>
