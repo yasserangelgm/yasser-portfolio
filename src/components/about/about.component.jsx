@@ -3,7 +3,6 @@ import { forwardRef } from 'react';
 import './about.styles.css';
 
 const About = forwardRef((props, ref) => {
-  console.log('about', ref);
   return (
     <>
       <section id="about" ref={ref}>

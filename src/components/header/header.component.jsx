@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useGlobal } from '../../context/global-context';
 import './header.styles.css';
 
-const Header = ({ aboutRef, scrollDirection }) => {
+const Header = ({ aboutRef, skillsRef, scrollDirection }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [asideClass, setAsideClass] = useState('side-menu');
   const [menuBurguerClass, setMenuBurguerClass] = useState('hamburguer');
@@ -47,11 +47,14 @@ const Header = ({ aboutRef, scrollDirection }) => {
 
   /* Handle link to page section */
   const handleScroll = (e, elementRef) => {
+    console.log('elementREF', elementRef);
     e.preventDefault();
-    elementRef.current.scrollIntoView({ behavior: 'smooth' });
+    elementRef.current.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'nearest',
+    });
   };
 
-  console.log(scrollDirection);
   return (
     <>
       <header
@@ -77,6 +80,7 @@ const Header = ({ aboutRef, scrollDirection }) => {
               <li
                 className="nav-link-item fadeInDown"
                 style={{ animationDelay: 100 + 'ms' }}
+                onClick={(event) => handleScroll(event, skillsRef)}
               >
                 <a href=""></a>Skills
               </li>

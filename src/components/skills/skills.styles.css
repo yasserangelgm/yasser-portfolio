@@ -1,0 +1,36 @@
+.skills-container {
+  display: block;
+}
+
+.skills-container p {
+  font-size: 17px;
+  font-weight: 300;
+}
+.skills-details {
+  padding-left: 0rem;
+  padding-right: 0;
+  padding-top: 30px;
+}
+
+.skills-text div {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .skills-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 50px;
+  }
+  .skills-details {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1080px) {
+  #skills {
+    max-width: 900px;
+  }
+}
