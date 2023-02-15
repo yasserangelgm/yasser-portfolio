@@ -6,12 +6,15 @@
   position: fixed;
   width: 100%;
   height: 100px;
-  /*  background-color: #0e1928de; */
+  background-color: #343541;
   z-index: 11;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
+  position: fixed;
+  top: 0px;
+  transition: top 0.4s ease 0s;
 }
 
 .main-nav {
@@ -247,6 +250,12 @@
   padding: 18px 50px;
   margin: 10% auto 0px;
   width: max-content;
+}
+
+.hide-header {
+  top: -105px;
+  box-shadow: 0px 5px 5px 0px #2b2b2bc7;
+  transition: top 0.4s ease 0s;
 }
 
 @media (min-width: 768px) {

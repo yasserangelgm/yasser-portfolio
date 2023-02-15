@@ -1,0 +1,56 @@
+.main-content-container {
+  padding: 0px 25px;
+  color: #ccd6f6;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 0px;
+}
+
+.main-content h1 {
+  margin: 0px 0px 20px 4px;
+  color: #10a37f;
+  font-family: 'Martian Mono', monospace;
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.big-heading {
+  margin: 0px;
+  line-height: 1;
+  font-size: clamp(34px, 8vw, 80px);
+}
+
+.main-content h3 {
+  margin-top: 15px;
+  color: #8892b0;
+  line-height: 0.9;
+  font-size: clamp(25px, 8vw, 70px);
+  font-weight: 600;
+}
+
+.main-content p {
+  margin: 20px 0px 0px;
+  max-width: 540px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .main-content-container {
+    padding: 0px 50px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .main-content-container {
+    padding: 0px 100px;
+  }
+}

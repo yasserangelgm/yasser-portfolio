@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useGlobal } from '../../context/global-context';
 import './header.styles.css';
 
-const Header = () => {
+const Header = ({ aboutRef, scrollDirection }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [asideClass, setAsideClass] = useState('side-menu');
   const [menuBurguerClass, setMenuBurguerClass] = useState('hamburguer');
@@ -12,7 +12,6 @@ const Header = () => {
     state: { isLoading },
   } = useGlobal();
 
-  console.log('Estado global desde el header: ', isLoading);
   /* Set the state of mobile icon menu */
   const handleMenuClick = () => {
     setIsClicked(!isClicked);
@@ -46,9 +45,20 @@ const Header = () => {
     };
   }, [isDesktop, mediaQueryMatch]);
 
+  /* Handle link to page section */
+  const handleScroll = (e, elementRef) => {
+    e.preventDefault();
+    elementRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  console.log(scrollDirection);
   return (
     <>
-      <header className="main-header">
+      <header
+        className={`main-header ${
+          scrollDirection === 'up' ? '' : 'hide-header'
+        }`}
+      >
         <nav className="main-nav">
           <div className="logo ">
             <a href="/">
@@ -60,6 +70,7 @@ const Header = () => {
               <li
                 className="nav-link-item fadeInDown"
                 style={{ animationDelay: 0 + 'ms' }}
+                onClick={(event) => handleScroll(event, aboutRef)}
               >
                 <a href=""></a>About
               </li>

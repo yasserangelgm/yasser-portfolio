@@ -9,7 +9,6 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
   line-height: 1.3;
   background-color: #343541;
 }
@@ -21,6 +20,22 @@ a {
   color: inherit;
   position: relative;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  color: #ccd6f6;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0px 0px 15px;
 }
 
 .main-layout {
@@ -57,6 +72,121 @@ a {
 
 .email-link:hover {
   background-color: #10a37e4b;
+}
+
+.main-content-container {
+  padding: 0px 25px;
+  color: #ccd6f6;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 0px;
+}
+
+.main-content h1 {
+  margin: 0px 0px 20px 4px;
+  color: #10a37f;
+  font-family: 'Martian Mono', monospace;
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.big-heading {
+  margin: 0px;
+  line-height: 1;
+  font-size: clamp(34px, 8vw, 80px);
+}
+
+.main-content h3 {
+  margin-top: 15px;
+  color: #8892b0;
+  line-height: 0.9;
+  font-size: clamp(25px, 8vw, 70px);
+  font-weight: 600;
+}
+
+.main-content p {
+  margin: 20px 0px 0px;
+  max-width: 540px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+section {
+  padding: 60px 0px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 10px 0px 40px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, 32px);
+  white-space: nowrap;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: -3px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: #8892b0bb;
+  width: 100%;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  section {
+    padding: 80px 0px;
+  }
+}
+@media (min-width: 768px) {
+  .main-content-container {
+    padding: 0px 50px;
+  }
+  .section-heading::after {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .main-content-container {
+    padding: 0px 150px;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+  }
+
+  @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
+    .main-content-container {
+      height: auto;
+      padding-top: 50px;
+    }
+    .main-content {
+      height: auto;
+      padding-top: 100px;
+    }
+  }
+
+  section {
+    margin: 0px auto;
+    padding: 100px 0px;
+    max-width: 1000px;
+  }
+  .section-heading::after {
+    width: 300px;
+    margin-left: 25px;
+  }
 }
 
 .fadeInDown {
