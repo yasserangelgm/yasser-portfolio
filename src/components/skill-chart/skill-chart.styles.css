@@ -4,14 +4,15 @@
 
 .chart footer {
   background-color: #ccd6f6;
-  height: 2px;
+  height: 3px;
 }
 
 .chart footer div {
   width: 0;
   height: 100%;
-  background-color: #08fdd8;
-  -webkit-transition: width 1.3s ease-out;
-  -o-transition: width 1.3s ease-out;
-  transition: width 1.3s ease-out;
+  background-color: #d26cd5;
+  transition-delay: 1s;
+  -webkit-transition: width 2.3s ease-out;
+  -o-transition: width 2.3s ease-out;
+  transition: width 2.3s ease-out;
 }

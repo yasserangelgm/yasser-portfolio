@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useGlobal } from '../../context/global-context';
 import './header.styles.css';
 
-const Header = ({ aboutRef, skillsRef, scrollDirection }) => {
+const Header = ({ aboutRef, skillsRef, projectsRef, scrollDirection }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [asideClass, setAsideClass] = useState('side-menu');
   const [menuBurguerClass, setMenuBurguerClass] = useState('hamburguer');
@@ -47,7 +47,6 @@ const Header = ({ aboutRef, skillsRef, scrollDirection }) => {
 
   /* Handle link to page section */
   const handleScroll = (e, elementRef) => {
-    console.log('elementREF', elementRef);
     e.preventDefault();
     elementRef.current.scrollIntoView({
       behavior: 'smooth',
@@ -75,33 +74,34 @@ const Header = ({ aboutRef, skillsRef, scrollDirection }) => {
                 style={{ animationDelay: 0 + 'ms' }}
                 onClick={(event) => handleScroll(event, aboutRef)}
               >
-                <a href=""></a>About
+                <a href=""></a>Acerca
               </li>
               <li
                 className="nav-link-item fadeInDown"
                 style={{ animationDelay: 100 + 'ms' }}
                 onClick={(event) => handleScroll(event, skillsRef)}
               >
-                <a href=""></a>Skills
+                <a href=""></a>Habiliades
               </li>
               <li
                 className="nav-link-item fadeInDown"
                 style={{ animationDelay: 200 + 'ms' }}
+                onClick={(event) => handleScroll(event, projectsRef)}
               >
-                <a href=""></a>Projects
+                <a href=""></a>Proyectos
               </li>
               <li
                 className="nav-link-item fadeInDown"
                 style={{ animationDelay: 300 + 'ms' }}
               >
-                <a href=""></a>Contact
+                <a href=""></a>Contacto
               </li>
             </ul>
             <div
               className="nav-link-item-button fadeInDown  "
               style={{ animationDelay: 400 + 'ms' }}
             >
-              <a className="resume-button">Resume</a>
+              <a className="resume-button">Curriculum</a>
             </div>
           </div>
           <div className="menu" onClick={handleMenuClick}>
@@ -115,19 +115,19 @@ const Header = ({ aboutRef, skillsRef, scrollDirection }) => {
                 <nav>
                   <ul>
                     <li>
-                      <a href=""></a>About
+                      <a href=""></a>Acerca
                     </li>
                     <li>
-                      <a href=""></a>Skills
+                      <a href=""></a>Habilidades
                     </li>
                     <li>
-                      <a href=""></a>Projects
+                      <a href=""></a>Proyectos
                     </li>
                     <li>
-                      <a href=""></a>Contact
+                      <a href=""></a>Contacto
                     </li>
                   </ul>
-                  <a className="resume-link">Resume</a>
+                  <a className="resume-link">Curriculum</a>
                 </nav>
               </aside>
             </div>
